@@ -40,13 +40,12 @@ $colors: (
 .hero-title {
   display: block;
   color: #fff !important;
-  line-height: 1.5;
-  text-transform: uppercase; }
+  line-height: 1.5; }
 
 .hero-subtitle {
   display: block;
   font-family: "Roboto" !important;
-  color: #007bff !important;
+  color: #888;
   line-height: 1.5; }
 
 .hero-buttons {

@@ -50,15 +50,6 @@ $colors: (
   display: inline-block;
   text-align: left; }
 
-.hero-title {
-  display: block;
-  color: #fff; }
-
-.hero-subtitle {
-  display: block;
-  font-family: "Roboto";
-  color: #007bff; }
-
 .hero-buttons {
   font-size: 0; }
 

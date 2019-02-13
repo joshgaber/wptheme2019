@@ -122,8 +122,8 @@ if ( !empty( $social_options['facebook_app'] ) && !empty( $social_options['faceb
 
 				<div class="hero-avatar d-block d-md-inline-block" style="background-image: url(<?= @$home_options['hero_avatar'] ?>);"></div>
 				<div class="hero-title-area d-block d-md-inline-block">
-					<h1 class="hero-title"><?php bloginfo("name") ?></h1>
-					<h3 class="hero-subtitle d-none d-md-block"><?php bloginfo("description") ?></h3>
+					<h1 class="hero-title text-white"><?php bloginfo("name") ?></h1>
+					<h3 class="hero-subtitle d-none d-md-block text-white-50"><?php bloginfo("description") ?></h3>
 				</div>
 
 				<?php if( has_nav_menu( 'action_buttons' ) ) :
