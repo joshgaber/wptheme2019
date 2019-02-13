@@ -1,0 +1,33 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-theme-gutenberg-fixed-row  {
+
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+
+  & > .editor-inner-blocks {
+    & > .editor-block-list__layout {
+      display: flex;
+
+      & > .editor-block-list__block {
+        max-width: 100%;
+        flex: {
+          basis: 0;
+          grow: 1;
+        }
+        pointer-events: none;
+
+        & > .editor-block-list__block-edit > * {
+          pointer-events: all;
+        }
+      }
+    }
+  }
+}

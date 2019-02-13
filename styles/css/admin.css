@@ -1,0 +1,206 @@
+/*
+$colors: (
+  "dark-green": $dark-green,
+  "dark-pink": $dark-pink,
+);
+*/
+.hero {
+  position: relative;
+  width: 100%;
+  padding-bottom: 33.33333%; }
+
+.hero-logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.hero-content {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  text-align: center;
+  font-size: 0; }
+
+.hero-avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  display: inline-block;
+  margin: 0 2rem; }
+
+.hero-title-area {
+  display: inline-block;
+  text-align: left; }
+
+.hero-title {
+  display: block;
+  color: #fff !important;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+.hero-subtitle {
+  display: block;
+  font-family: "Roboto" !important;
+  color: #007bff !important;
+  line-height: 1.5; }
+
+.hero-buttons {
+  font-size: 0; }
+
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 1.5rem; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-logo {
+    height: 150px; }
+  .hero-title {
+    font-size: 2rem; }
+  .hero-subtitle {
+    font-size: 1.5rem; } }
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-logo {
+    height: 200px; }
+  .hero-title {
+    font-size: 3rem; }
+  .hero-subtitle {
+    font-size: 2rem; } }
+
+@media (min-width: 1200px) {
+  .hero-logo {
+    height: 250px; }
+  .hero-title {
+    font-size: 4rem; }
+  .hero-subtitle {
+    font-size: 2.5rem; } }
+
+.bg-image {
+  background-color: #ccc;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#hero-alt-title-meta, #hero-subtitle-meta {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border-color: transparent;
+  text-align: center; }
+
+#hero-alt-title-meta:focus, #hero-subtitle-meta:focus {
+  background: rgba(102, 102, 102, 0.3);
+  border-color: white; }
+
+#hero-alt-title-meta::placeholder {
+  color: #bbb; }
+
+#hero-alt-title-meta::-webkit-input-placeholder {
+  color: #bbb; }
+
+#hero-alt-title-meta:-moz-placeholder {
+  color: #bbb; }
+
+#hero-alt-title-meta::-moz-placeholder {
+  color: #bbb; }
+
+#hero-alt-title-meta:-ms-input-placeholder {
+  color: #bbb; }
+
+#hero-subtitle-meta::placeholder {
+  color: #bbb; }
+
+#hero-subtitle-meta::-webkit-input-placeholder {
+  color: #bbb; }
+
+#hero-subtitle-meta:-moz-placeholder {
+  color: #bbb; }
+
+#hero-subtitle-meta::-moz-placeholder {
+  color: #bbb; }
+
+#hero-subtitle-meta:-ms-input-placeholder {
+  color: #bbb; }
+
+#hero-buttons-meta {
+  text-align: center;
+  margin: 10px auto; }
+
+#hero-buttons-preview-meta {
+  display: inline-block; }
+
+.hero-button-wrapper-meta {
+  position: relative; }
+
+.hero-button-meta {
+  margin: 0 10px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 17px;
+  line-height: 1.7;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out; }
+
+.hero-button-meta:hover, .hero-button-meta:focus {
+  color: #fff;
+  background-color: #004c36;
+  border-color: #004c36; }
+
+#hero-button-add-meta {
+  width: 42px;
+  border-radius: 50%;
+  -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out; }
+
+.hero-button-edit-meta {
+  position: absolute;
+  top: 32px;
+  background: #ddd;
+  padding: 20px 10px 10px;
+  border: 1px solid #aaa;
+  text-align: left; }
+
+.hero-button-close-meta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer; }
+
+.hero-button-edit-meta input {
+  min-width: 300px; }
+
+.hero-button-delete-meta {
+  color: #C00; }
+
+.hero-button-delete-meta:hover {
+  color: #900; }
+
+.hero-button-delete-meta:active, .hero-button-delete-meta:focus {
+  color: #600; }

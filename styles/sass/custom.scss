@@ -1,0 +1,288 @@
+@import "overrides";
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+/****************************************
+ ***********    NAVIGATION    ***********
+ ****************************************/
+
+.navbar-nav {
+    .facebook:hover, .facebook > a:hover { color: #3e5b98 !important; }
+    .twitter:hover, .twitter > a:hover { color: #55acee !important; }
+    .instagram:hover, .instagram > a:hover { color: #e95950 !important; }
+    .youtube:hover, .youtube > a:hover { color: #e02a20 !important; }
+}
+
+/****************************************
+ *********    HOME PAGE HERO    *********
+ ****************************************/
+
+.hero {
+	position: relative;
+	width: 100%;
+	padding-bottom: 33.33333%;
+}
+
+.hero-content {
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	text-align: center;
+	font-size: 0;
+}
+.hero-avatar {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background-size: cover;
+	display: inline-block;
+	margin: 0 2rem;
+}
+.hero-title-area {
+	display: inline-block;
+	text-align: left;
+}
+.hero-title {
+	display: block;
+	color: #fff;
+}
+.hero-subtitle {
+	display: block;
+	font-family: $font-family-sans-serif;
+	color: $primary;
+}
+.hero-buttons {
+	font-size: 0;
+}
+
+@media (max-width: 767.98px) {
+	.hero { padding-bottom: 50%; }
+	.hero-content { top: 40%; transform: translateY(-40%); -ms-transform: translateY(-40%); -webkit-transform: translateY(-40%); }
+	.hero .bg-image { clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); }
+	.hero-avatar { height: 75px; width: 75px; margin: 0.5rem auto; }
+	.hero-title { font-size: 1.5rem; text-align: center; }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.hero-avatar { height: 150px; width: 150px; }
+	.hero-title { font-size: 2rem; }
+	.hero-subtitle { font-size: 1.5rem; }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.hero-avatar { height: 200px; width: 200px; }
+	.hero-title { font-size: 3rem; }
+	.hero-subtitle { font-size: 2rem; }
+}
+@media (min-width: 1200px) {
+	.hero-avatar { height: 250px; width: 250px; }
+	.hero-title { font-size: 4rem; }
+	.hero-subtitle { font-size: 2.5rem; }
+}
+
+
+/****************************************
+ **************    BODY    **************
+ ****************************************/
+
+section.page {
+	padding: ($spacer * 2) 0;
+	position: relative;
+}
+
+
+/****************************************
+ *************    FOOTER    *************
+ ****************************************/
+.footer-widget {
+	padding: {
+	    top: ($spacer * 2.5);
+	    bottom: ($spacer * 2.5);
+	}
+}
+
+
+/****************************************
+ ************    ELEMENTS    ************
+ ****************************************/
+
+.bg-image {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: {
+	    position: center center;
+    	repeat: no-repeat;
+    	size: cover;
+      color: #ccc;
+      image: linear-gradient(to bottom, #ccc 0%, #999 30%, #999 70%, #ccc 100%);
+	}
+}
+
+
+/***************************************
+ **********    ICON CIRCLE    **********
+ ***************************************/
+.icon-circle {
+	display: inline-block;
+	background: $primary;
+	color: #fff;
+	line-height: 1;
+	border-radius: 50%;
+	height: 4rem;
+	width: 4rem;
+	text-align: center;
+	font-size: 2rem;
+
+	&.icon-circle-primary { background: $primary; color: #fff; }
+    &.icon-circle-secondary { background: $secondary; color: #fff; }
+    .oi, .socicon, .char { padding: 25%; display: inline-block; }
+}
+
+
+/***************************************
+ ***********    WORDPRESS    ***********
+ ***************************************/
+.aligncenter,
+div.aligncenter {
+	 display: block;
+	 margin-left: auto;
+	 margin-right: auto;
+}
+
+@media (min-width: 768px) {
+	.alignleft {
+		 float: left;
+		 margin-bottom: $spacer;
+		 margin-right: $spacer;
+		 max-width: 50%;
+	}
+
+	.alignright {
+		 float: right;
+		 margin-bottom: $spacer;
+		 margin-left: $spacer;
+		 max-width: 50%;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.alignleft, .alignright {
+		 display: block;
+		 margin: $spacer auto;
+		 max-width: 100%;
+	}
+}
+
+.text-small {
+	font-size: 0.8em;
+}
+
+
+/***************************************
+ *********    FEATURE TILES    *********
+ ***************************************/
+.image-tile {
+	width: 100%;
+	position: relative;
+	margin: ($spacer * 2) auto;
+	text-align: center;
+}
+
+.image-tile a.image-tile-link {
+	display: block;
+	background: transparent;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+	transition: background 0.4s;
+}
+
+.image-tile, .image-tile .bg-image, .image-tile .image-tile-link, .image-tile .image-tile-content {
+  border-radius: 1rem;
+}
+
+.image-tile a.image-tile-link:hover {
+	background: rgba(255,255,255,0.3);
+}
+
+.image-tile .image-tile-content {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	width: 100%;
+	padding: 30px;
+}
+
+.image-tile .image-tile-title {
+	width: 100%;
+	font-size: 2.2rem;
+	margin: 0 auto 30px;
+}
+
+.image-tile .image-tile-body {
+	color: white;
+	font-size: 1.6rem;
+  font-weight: 300;
+}
+
+@media (min-width: 1200px) {
+	.image-tile {
+		height: 500px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.image-tile {
+		height: 420px;
+	}
+	.image-tile .image-tile-content {
+		font-size: 1.2em;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.image-tile {
+		height: 320px;
+	}
+	.image-tile .image-tile-content {
+		font-size: 1.2em;
+	}
+}
+@media (max-width: 767px) {
+	.image-tile {
+		height: 300px;
+	}
+	.image-tile .image-tile-content {
+		font-size: 1.2em;
+	}
+}
+
+
+/****************************************
+ ***********    IMAGE TABS    ***********
+ ****************************************/
+img.img-tab {
+	margin: 10px auto;
+	display: block;
+	opacity: 0.5;
+	transition: opacity 0.2s ease-in-out;
+}
+
+img.img-tab:hover {
+	opacity: 0.7;
+}
+
+li.active img.img-tab, li.active:hover img.img-tab {
+	opacity: 1;
+}
