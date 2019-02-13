@@ -225,7 +225,13 @@ function josh2019_nav_logo_callback() {
 		$value = $options['nav_logo'];
 	} // end if
 
-	$html = '<button type="button" id="nav-new-logo" class="button-primary js-image-picker" data-field=".nav-logo-url" data-src="#nav-logo-preview">Select new image</button><input type="hidden" id="nav_logo" class="nav-logo-url" name="josh2019_global_options[nav_logo]" value="' . $value . '"> <img src="' . $value . '" id="nav-logo-preview" style="max-height: 30px;">';
+	$html = '<button type="button" id="nav-new-logo" class="button-primary js-image-picker" '
+		. 'data-field=".nav-logo-url" data-src="#nav-logo-preview" data-size="thumbnail">'
+			. 'Select new image'
+		. '</button>'
+		. '<input type="hidden" id="nav_logo" class="nav-logo-url" '
+			. 'name="josh2019_global_options[nav_logo]" value="' . $value . '"> '
+			. '<img src="' . $value . '" id="nav-logo-preview" style="max-height: 30px;">';
 
 	echo $html;
 }
@@ -243,7 +249,12 @@ function josh2019_hero_image_callback() {
 		$value = $options['hero_image'];
 	} // end if
 
-	$html = '<button type="button" id="hero-new-image" class="button-primary js-image-picker" data-field=".hero-image-show-url" data-display="#hero-image-preview">Select new image</button><input type="hidden" id="hero_image" class="hero-image-show-url" name="josh2019_home_options[hero_image]" value="' . $value . '">';
+	$html = '<button type="button" id="hero-new-image" class="button-primary js-image-picker" '
+		. 'data-field=".hero-image-show-url" data-display="#hero-image-preview" data-size="large">'
+	 		. 'Select new image'
+		. '</button>'
+		. '<input type="hidden" id="hero_image" class="hero-image-show-url" '
+			. 'name="josh2019_home_options[hero_image]" value="' . $value . '">';
 
 	echo $html;
 }
@@ -256,7 +267,12 @@ function josh2019_hero_avatar_callback() {
 		$value = $options['hero_avatar'];
 	} // end if
 
-	$html = '<button type="button" id="hero-new-avatar" class="button-primary js-image-picker" data-field=".hero-avatar-show-url" data-display="#hero-avatar-preview">Select new image</button><input type="hidden" id="hero_avatar" class="hero-avatar-show-url" name="josh2019_home_options[hero_avatar]" value="' . $value . '">';
+	$html = '<button type="button" id="hero-new-avatar" class="button-primary js-image-picker" '
+	. 'data-field=".hero-avatar-show-url" data-display="#hero-avatar-preview" data-size="medium">'
+		. 'Select new image'
+	. '</button>'
+	. '<input type="hidden" id="hero_avatar" class="hero-avatar-show-url" '
+		. 'name="josh2019_home_options[hero_avatar]" value="' . $value . '">';
 
 	echo $html;
 }
@@ -323,6 +339,8 @@ function home_page_header_picker_script() {
 				$data_field = $( this ).data( 'field' );
 				$data_display = $( this ).data( 'display' );
 				$data_src = $( this ).data( 'src' );
+				// Use "full" if no size specified
+				$data_size = ( $( this ).data( 'size' ) ? $( this ).data( 'size' ) : 'full' );
 
 				// If the media frame already exists, reopen it.
 				if ( file_frame ) {
@@ -344,13 +362,13 @@ function home_page_header_picker_script() {
 					attachment = file_frame.state().get('selection').first().toJSON();
 					// Do something with attachment.id and/or attachment.url here
 					if ($data_display) {
-						$( $data_display ).css( 'background-image', 'url(' + attachment.url + ")" );
+						$( $data_display ).css( 'background-image', 'url(' + attachment.sizes[$data_size].url + ")" );
 					}
 					if ($data_field) {
-						$( $data_field ).val( attachment.url );
+						$( $data_field ).val( attachment.sizes[$data_size].url );
 					}
 					if ($data_src) {
-						$( $data_src ).attr( 'src', attachment.url );
+						$( $data_src ).attr( 'src', attachment.sizes[$data_size].url );
 					}
 
 				});
