@@ -1,4 +1,5 @@
 @import "overrides";
+@import "theme/mixins";
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -25,20 +26,14 @@
 }
 
 .hero-content {
-	position: absolute;
+  @include centre-vertically;
 	width: 100%;
 	z-index: 10;
-	top: 50%;
-	transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
 	text-align: center;
 	font-size: 0;
 }
 .hero-avatar {
-	height: 150px;
-	width: 150px;
-	border-radius: 50%;
+  border-radius: 50%;
 	background-size: cover;
 	display: inline-block;
 	margin: 0 2rem;
@@ -53,23 +48,23 @@
 
 @media (max-width: 767.98px) {
 	.hero { padding-bottom: 50%; }
-	.hero-content { top: 40%; transform: translateY(-40%); -ms-transform: translateY(-40%); -webkit-transform: translateY(-40%); }
+	.hero-content { top: 40%; @include prefixer(transform, translateY(-40%), ("webkit", "ms")); }
 	.hero .bg-image { clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); }
-	.hero-avatar { height: 75px; width: 75px; margin: 0.5rem auto; }
+	.hero-avatar { @include size(75px); margin: 0.5rem auto; }
 	.hero-title { font-size: 1.5rem; text-align: center; }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.hero-avatar { height: 150px; width: 150px; }
+	.hero-avatar { @include size(150px); }
 	.hero-title { font-size: 2rem; }
 	.hero-subtitle { font-size: 1.5rem; }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.hero-avatar { height: 200px; width: 200px; }
+	.hero-avatar { @include size(200px); }
 	.hero-title { font-size: 3rem; }
 	.hero-subtitle { font-size: 2rem; }
 }
 @media (min-width: 1200px) {
-	.hero-avatar { height: 250px; width: 250px; }
+	.hero-avatar { @include size(250px); }
 	.hero-title { font-size: 4rem; }
 	.hero-subtitle { font-size: 2.5rem; }
 }
@@ -101,13 +96,9 @@ section.page {
  ****************************************/
 
 .bg-image {
-	position: absolute;
+	@include position(absolute, 0);
 	width: 100%;
 	z-index: -1;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	background: {
 	    position: center center;
     	repeat: no-repeat;
@@ -208,11 +199,7 @@ div.aligncenter {
 }
 
 .image-tile .image-tile-content {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
+  @include centre-vertically;
 	width: 100%;
 	padding: 30px;
 }

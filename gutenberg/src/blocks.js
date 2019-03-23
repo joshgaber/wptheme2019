@@ -9,5 +9,7 @@
  * Webpack is compiling as the input file.
  */
 
-import './block/row.js';
-import './block/column.js';
+import './columns/row.js';
+import './columns/column.js';
+import './alert/alert.js';
+import './card/card.js';

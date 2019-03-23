@@ -17,7 +17,7 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-      		<h1 class="post-title"><?php the_title(); ?></h1>
+      		<h1 class="post-title display-4"><?php the_title(); ?></h1>
       		<div class="post-subtitle">Published on <?= get_the_date() ?></div>
 
 

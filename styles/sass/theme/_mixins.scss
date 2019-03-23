@@ -1,0 +1,8 @@
+@import "../bourbon/bourbon";
+
+// Use position and transform to align a block vertically
+@mixin centre-vertically($percent: 50%) {
+  position: absolute;
+	top: $percent;
+	@include prefixer(transform, translateY(-($percent)), ("webkit", "ms"));
+}
